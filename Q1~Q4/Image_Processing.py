@@ -56,20 +56,18 @@ class Image_Processing:
 
     def blending(self):
 
+        def callBackFunction(x):
+            alpha = x / 256
+            beta = 1 - alpha
+            output = cv2.addWeighted(img1, alpha, img2, beta, 0)
+            cv2.imshow("image", output)
+
         cv2.namedWindow('image')
-        cv2.createTrackbar('alpha', 'image', 0, 256, (lambda x: None))
+        cv2.createTrackbar('alpha', 'image', 0, 256, callBackFunction)
 
         img1 = cv2.imread("../data/Q1_Image/Dog_Strong.jpg")
         img2 = cv2.imread("../data/Q1_Image/Dog_Weak.jpg")
 
-        while True:
-            alpha = cv2.getTrackbarPos("alpha", 'image') / 256
-            beta = 1 - alpha
-
-            output = cv2.addWeighted(img1, alpha, img2, beta, 0)
-
-            cv2.imshow("image", output)
-            if cv2.waitKey(1) & 0xFF == 27:
-                break
-
+        cv2.waitKey(0) 
         cv2.destroyAllWindows()
+        

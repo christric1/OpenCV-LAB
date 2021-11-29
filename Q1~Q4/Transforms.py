@@ -39,6 +39,7 @@ class Transforms:
         resize_img = cv2.resize(self.img, (256, 256))
 
         M = np.float32([[1, 0, 0], [0, 1, 60]])
+
         dst = cv2.warpAffine(resize_img, M, (400, 300))
 
         angle = 10
@@ -46,9 +47,10 @@ class Transforms:
 
         dst = cv2.warpAffine(dst, rotate_mat, (400, 300))
 
-        M = np.float32([[1, 0.5, 0],
-                        [0, 1, 0]])
+        pts1 = np.float32([[50,50],[200,50],[50,200]])
+        pts2 = np.float32([[10,100],[200,50],[100,250]])
+        H = cv2.getAffineTransform(pts1,pts2)
 
-        dst = cv2.warpAffine(dst, M, (400, 300))
+        dst = cv2.warpAffine(dst, H, (400, 300))
 
         cv2.imshow("translation", dst)
