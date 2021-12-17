@@ -130,7 +130,8 @@ def test(number):
     print("device : ", device)
 
     net = VGG16(VGG_16).to(device)
-    net.load_state_dict(torch.load('../model/VGG16.pth'))
+    net.load_state_dict(torch.load('../model/VGG16.pth', map_location='cpu'))
+    print("123")
     net.eval()
 
     dataIter = iter(train_loader)
@@ -140,6 +141,8 @@ def test(number):
     plt.subplot(1, 2, 1)
     image = images[number]
     plt.imshow(np.transpose((image / 2 + 0.5).numpy(), (1, 2, 0)))
+
+    print("123")
 
     image = image.to(device)
 

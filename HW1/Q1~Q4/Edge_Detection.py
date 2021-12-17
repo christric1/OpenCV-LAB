@@ -52,6 +52,7 @@ class Edge_Detection:
 
         sobel_x_img = signal.convolve2d(grad, sobel_x, boundary='symm', mode='same')
         sobel_x_img = np.abs(sobel_x_img)
+        sobel_x_img[sobel_x_img > 255] = 255
 
         plt.figure(figsize=(12, 6))
 
