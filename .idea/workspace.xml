@@ -5,45 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ed9625-ae50-48e3-af01-3bc3dc22a427" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HW2/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/OpenCV-Lab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OpenCV-Lab.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q1~Q4/Edge_Detection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q1~Q4/Image_Processing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q1~Q4/Image_Smoothing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q1~Q4/Transforms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q1~Q4/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q5/VGG16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q5/VGG_main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q5/runs/Nov17_03-03-05_DESKTOP-L6GDIRUVGG16/events.out.tfevents.1637089385.DESKTOP-L6GDIRU" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q5/runs/Nov17_03-03-27_DESKTOP-L6GDIRUVGG16/events.out.tfevents.1637089407.DESKTOP-L6GDIRU" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q5/runs/Nov17_03-12-12_DESKTOP-L6GDIRUVGG16/events.out.tfevents.1637089932.DESKTOP-L6GDIRU.11920.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q5/runs/Nov18_02-03-11_DESKTOP-L6GDIRUVGG16/events.out.tfevents.1637172191.DESKTOP-L6GDIRU.13076.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/accuracy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/training_rate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-batches-py/batches.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-batches-py/data_batch_1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-batches-py/data_batch_2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-batches-py/data_batch_3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-batches-py/data_batch_4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-batches-py/data_batch_5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-batches-py/readme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-batches-py/test_batch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cifar10/cifar-10-python.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Q1_Image/Dog_Strong.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Q1_Image/Dog_Weak.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Q1_Image/Sun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Q2_Image/Lenna_pepperSalt.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Q2_Image/Lenna_whiteNoise.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Q3_Image/House.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Q4_Image/SQUARE-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/VGG16.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW2/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,9 +34,40 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OpenCV-Lab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HW2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HW2/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e7ed9625-ae50-48e3-af01-3bc3dc22a427" name="Changes" comment="" />
@@ -87,10 +83,42 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1639755288558">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1639755288558" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1639760869151">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1639760869151" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1639760869150">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1639760869150" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1639760869150">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1639760869150" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1639760869150">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1639760869150" />
+    <state x="270" y="54" key="SettingsEditor" timestamp="1639755536615">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1639755536615" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1639759475974">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1639759475974" />
   </component>
 </project>
