@@ -4,10 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7ed9625-ae50-48e3-af01-3bc3dc22a427" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/OpenCV-Lab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OpenCV-Lab.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e7ed9625-ae50-48e3-af01-3bc3dc22a427" name="Changes" comment="Create UI.">
+      <change afterPath="$PROJECT_DIR$/HW2/Camera_Calibration.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q1_Image/img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q1_Image/img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/1.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/10.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/11.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/12.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/13.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/14.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/15.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/2.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/3.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/4.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/5.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/6.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/7.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/8.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q2_Image/9.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q3_Image/1.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q3_Image/2.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q3_Image/3.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q3_Image/4.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q3_Image/5.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q4_Image/imL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW2/data/Q4_Image/imR.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/Q1~Q4/Image_Processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW1/Q1~Q4/Image_Processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW2/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,17 +50,63 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="22OevXnDn2XZh9md4Jjg9sfc4Xl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="Camera_Calibration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OpenCV-Lab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HW2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HW2/Camera_Calibration.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OpenCV-Lab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HW1/Q1~Q4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HW1/Q1~Q4/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OpenCV-Lab" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,6 +131,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.Camera_Calibration" />
       </list>
     </recent_temporary>
   </component>
@@ -76,6 +148,14 @@
       <option name="presentableId" value="Default" />
       <updated>1639713291285</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create UI.">
+      <created>1639760916919</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639760916919</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,34 +171,43 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Create UI." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create UI." />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="444" y="2" key="CommitChangelistDialog2" timestamp="1639760911612">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="444" y="2" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1639760911612" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1639755288558">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1639755288558" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1639760869151">
+    <state width="1515" height="313" key="GridCell.Tab.0.bottom" timestamp="1640019382494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1639760869151" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1639760869150">
+    <state width="1515" height="313" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1640019382494" />
+    <state width="1515" height="313" key="GridCell.Tab.0.center" timestamp="1640019382493">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1639760869150" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1639760869150">
+    <state width="1515" height="313" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1640019382493" />
+    <state width="1515" height="313" key="GridCell.Tab.0.left" timestamp="1640019382492">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1639760869150" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1639760869150">
+    <state width="1515" height="313" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1640019382492" />
+    <state width="1515" height="313" key="GridCell.Tab.0.right" timestamp="1640019382493">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1639760869150" />
+    <state width="1515" height="313" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1640019382493" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1639755536615">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1639755536615" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1639759475974">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1639991935340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1639759475974" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1639991935340" />
   </component>
 </project>

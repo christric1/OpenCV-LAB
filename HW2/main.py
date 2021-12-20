@@ -3,6 +3,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
 import sys
+import Camera_Calibration
 
 
 class Main_window(QWidget):
@@ -56,6 +57,14 @@ class Main_window(QWidget):
 
         self.hBox.addWidget(self.groupBox1, 1)
         self.hBox.addWidget(self.groupBox3, 1)
+
+        # ----------------------------------------------------------------------
+
+        self.CC = Camera_Calibration.Camera_Calibration()
+
+        self.groupBox1_btn1.clicked.connect(self.CC.Find_corner)
+        self.groupBox1_btn2.clicked.connect(self.CC.Find_Intrinsic)
+        self.groupBox2_btn1.clicked.connect(self.CC.Find_Extrinsic)
 
 
 if __name__ == '__main__':

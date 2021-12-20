@@ -34,7 +34,6 @@ class Image_Processing:
         plt.show()
 
     def color_transformation(self):
-
         gray_img = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
 
         B, G, R = cv2.split(self.img)
@@ -55,7 +54,6 @@ class Image_Processing:
         plt.show()
 
     def blending(self):
-
         def callBackFunction(x):
             alpha = x / 256
             beta = 1 - alpha
@@ -68,6 +66,5 @@ class Image_Processing:
         img1 = cv2.imread("../data/Q1_Image/Dog_Strong.jpg")
         img2 = cv2.imread("../data/Q1_Image/Dog_Weak.jpg")
 
-        cv2.waitKey(0) 
+        cv2.waitKey(0)
         cv2.destroyAllWindows()
-        
