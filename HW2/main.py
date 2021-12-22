@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import *
 
 import sys
 import Camera_Calibration
+import ResNet50
 
 
 class Main_window(QWidget):
@@ -64,7 +65,16 @@ class Main_window(QWidget):
 
         self.groupBox1_btn1.clicked.connect(self.CC.Find_corner)
         self.groupBox1_btn2.clicked.connect(self.CC.Find_Intrinsic)
-        self.groupBox2_btn1.clicked.connect(self.CC.Find_Extrinsic)
+        self.groupBox2_btn1.clicked.connect(lambda: self.CC.Find_Extrinsic(self.lineEdit.text()))
+        self.groupBox1_btn3.clicked.connect(self.CC.Find_Distortion)
+        self.groupBox1_btn4.clicked.connect(self.CC.Show_Undistorted)
+
+        self.RN = ResNet50.ResNet50()
+
+        self.groupBox3_btn1.clicked.connect(self.RN.Show_Model_Structure)
+        self.groupBox3_btn2.clicked.connect(self.RN.Show_Tensorboard)
+        self.groupBox3_btn3.clicked.connect(self.RN.Test)
+        self.groupBox3_btn4.clicked.connect(self.RN.Data_Argument)
 
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ import os
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
-# define hyperparamter
+# define hyperParameter
 batch_size = 32  # Batch size
 learning_rate = 1e-2  # Learning rate
 optimizer = "SGD"
