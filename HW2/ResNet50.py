@@ -1,22 +1,15 @@
 import cv2
 import torch
 import torch.nn as nn
-import torchvision
-from torch.utils.data import Dataset, DataLoader, ConcatDataset
-from torch import optim
-from torch.utils.data import DataLoader
-import torch.utils.data as data
+import glob
+from torch.utils.data import Dataset
+from random import choice
 from torch.utils.tensorboard import SummaryWriter
-from torchvision import transforms, models
-from torchvision import datasets
+from torchvision import transforms, models, datasets
 from torchsummary import summary
-from tqdm import tqdm
-from torch.optim import lr_scheduler
 import matplotlib.pyplot as plt
 import numpy as np
-from torch.optim.lr_scheduler import *
 from PIL import Image
-import os
 
 # hyperParameter
 BATCH_SIZE = 20
@@ -33,6 +26,15 @@ data_transforms = {
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  # 標準化
     ]),
 
+    'train_random_erase': transforms.Compose([
+        transforms.Resize((256, 256)),  # resize image to 224x224
+        transforms.RandomResizedCrop(224),  # random crop and scale
+        transforms.RandomHorizontalFlip(),  # 隨機水平翻轉
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),  # 標準化
+        transforms.RandomErasing()
+    ]),
+
     'test': transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
@@ -41,15 +43,8 @@ data_transforms = {
 }
 
 # Pass transforms in here, then run the next cell to see how the transforms look
-train_data = datasets.ImageFolder('data/Q5_data/train', transform=data_transforms['train'])
-
-# # Random split
-# train_set_size = int(len(train_data) * 0.8)
-# valid_set_size = len(train_data) - train_set_size
-# train_set, valid_set = data.random_split(train_data, [train_set_size, valid_set_size])
-
+train_data = datasets.ImageFolder('data/Q5_data/train', transform=data_transforms['train_random_erase'])
 trainLoader = torch.utils.data.DataLoader(train_data, batch_size=BATCH_SIZE, shuffle=True)
-# validLoader = torch.utils.data.DataLoader(valid_set, batch_size=BATCH_SIZE, shuffle=True)
 
 
 class ResNet50:
@@ -57,15 +52,45 @@ class ResNet50:
         self.model = models.resnet50(pretrained=True)
         self.model.fc = nn.Linear(self.model.fc.in_features, 2)
         self.model = self.model.to(DEVICE)
+        self.model.load_state_dict(torch.load('./model/ResNet50.pth'))
 
     def Show_Model_Structure(self):
         summary(self.model, (3, 224, 224))
 
     def Show_Tensorboard(self):
-        print("123")
+        img1 = cv2.imread("./chart/loss.png")
+        img2 = cv2.imread("./chart/accuracy.png")
+
+        plt.figure(figsize=(12, 6))
+
+        plt.subplot(1, 2, 1)
+        plt.title("loss")
+        plt.imshow(img1)
+
+        plt.subplot(1, 2, 2)
+        plt.title("accuracy")
+        plt.imshow(img2)
+
+        plt.show()
 
     def Test(self):
-        print("123")
+        images = glob.glob('.\\data\\Q5_data\\test\\*.jpg')
+        img_path = choice(images)
+
+        input_img = data_transforms['test'](Image.open(img_path))
+        input_img = input_img.to(DEVICE)
+        output = self.model(input_img.unsqueeze(0))
+
+        m = nn.Softmax(dim=1)
+        ratio = m(output)
+        ratio = ratio.squeeze()
+        ratio_np = ratio.cpu().detach().numpy()
+
+        print("The ratio : ", ratio_np)
+
+        plt.title("{}".format("Class:Cat" if np.argmax(ratio_np) == 0 else "Class:Dog"))
+        plt.imshow(cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB))
+        plt.show()
 
     def Data_Argument(self):
         print("123")
@@ -126,5 +151,4 @@ if __name__ == '__main__':
         writer.add_scalar("accuracy", 100 * train_acc, epoch)
 
     print('Finished Training')
-    torch.save(model.state_dict(), '../model/ResNet50.pth')  # save trained model
-
+    torch.save(model.state_dict(), 'model/ResNet50_random_erase.pth')  # save trained model
