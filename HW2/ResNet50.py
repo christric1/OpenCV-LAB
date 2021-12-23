@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 import glob
 from torch.utils.data import Dataset
+import torch.utils.data as data
 from random import choice
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms, models, datasets
@@ -12,8 +13,8 @@ import numpy as np
 from PIL import Image
 
 # hyperParameter
-BATCH_SIZE = 20
-EPOCHS = 20
+BATCH_SIZE = 16
+EPOCHS = 5
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # data transformation
@@ -43,8 +44,15 @@ data_transforms = {
 }
 
 # Pass transforms in here, then run the next cell to see how the transforms look
-train_data = datasets.ImageFolder('data/Q5_data/train', transform=data_transforms['train_random_erase'])
+dataset = datasets.ImageFolder('data/Q5_data/train', transform=data_transforms['train'])
+
+# Random split
+train_set_size = int(len(dataset) * 0.8)
+valid_set_size = len(dataset) - train_set_size
+train_data, valid_data = data.random_split(dataset, [train_set_size, valid_set_size])
+
 trainLoader = torch.utils.data.DataLoader(train_data, batch_size=BATCH_SIZE, shuffle=True)
+validLoader = torch.utils.data.DataLoader(valid_data, batch_size=BATCH_SIZE, shuffle=True)
 
 
 class ResNet50:
@@ -52,7 +60,7 @@ class ResNet50:
         self.model = models.resnet50(pretrained=True)
         self.model.fc = nn.Linear(self.model.fc.in_features, 2)
         self.model = self.model.to(DEVICE)
-        self.model.load_state_dict(torch.load('./model/ResNet50.pth'))
+        self.model.load_state_dict(torch.load('./model/ResNet50.pth', map_location='cpu'))
 
     def Show_Model_Structure(self):
         summary(self.model, (3, 224, 224))
@@ -101,7 +109,7 @@ if __name__ == '__main__':
     print("device : ", DEVICE)
 
     # load model
-    model = models.resnet50(pretrained=True)
+    model = models.resnet50(pretrained=False)
     model.fc = nn.Linear(model.fc.in_features, 2)
     model = model.to(DEVICE)
     summary(model, (3, 224, 224))
@@ -112,14 +120,18 @@ if __name__ == '__main__':
     optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
     criterion = nn.CrossEntropyLoss()
 
-    # training
+    # 參數
+    itr = 1
+    itr_ = 1
+    p_itr = 200
+
     for epoch in range(EPOCHS):
-        # train_Loss, train_Acc = train(model, trainLoader, optimizer, criterion, epoch)
 
         train_loss = 0.0
-        train_acc = 0.0
-        percent = 10
 
+        # training
+        model.train()
+        print("Train : ")
         for batch_idx, Data in enumerate(trainLoader, 0):
             inputs, labels = Data
             inputs, labels = inputs.to(DEVICE), labels.to(DEVICE)
@@ -132,23 +144,48 @@ if __name__ == '__main__':
             optimizer.step()
 
             train_loss += loss.item()
-            prediction = outputs.max(1, keepdim=True)[1]
-            acc = prediction.eq(labels.view_as(prediction)).sum().item()
-            train_acc += acc
 
-            if batch_idx % percent == 0:
-                print('train epoch: {} [{}/{} ({:.0f}%)]\tloss: {:.6f}\t'.format(
-                    epoch, (batch_idx + 1) * len(inputs), len(train_data),
-                           100.0 * batch_idx / len(trainLoader), loss))
+            if itr % p_itr == 0:
+                prediction = torch.argmax(outputs, dim=1)
+                correct = prediction.eq(labels)
+                acc = torch.mean(correct.float())
 
-        train_loss *= BATCH_SIZE
-        train_loss /= len(train_data)
-        train_acc = train_acc / len(train_data)
+                print('[Epoch {}/{}] Iteration {} -> Train Loss: {:.4f}, Accuracy: {:.3f}'.
+                      format(epoch + 1, epoch, itr, train_loss/p_itr, acc))
 
-        print('\ntrain epoch: {}\tloss: {:.6f}\taccuracy:{:.4f}% '.format(epoch, train_loss, 100. * train_acc))
+                writer.add_scalar("Loss/train", train_loss/p_itr, itr)
+                writer.add_scalar("Accuracy/train", 100 * acc, itr)
+                train_loss = 0.0
 
-        writer.add_scalar("training loss ", train_loss, epoch)
-        writer.add_scalar("accuracy", 100 * train_acc, epoch)
+            itr += 1
+
+        # valid
+        model.eval()
+        print("Valid : ")
+        for batch_idx, Data in enumerate(validLoader, 0):
+
+            inputs, labels = Data
+            inputs, labels = inputs.to(DEVICE), labels.to(DEVICE)
+
+            with torch.no_grad():
+                outputs = model(inputs)
+
+                loss = criterion(outputs, labels)
+                train_loss += loss.item()
+
+            if itr_ % p_itr == 0:
+                prediction = torch.argmax(outputs, dim=1)
+                correct = prediction.eq(labels)
+                acc = torch.mean(correct.float())
+
+                print('[Epoch {}/{}] Iteration {} -> Valid Loss: {:.4f}, Accuracy: {:.3f}'.
+                      format(epoch + 1, epoch, itr_, train_loss / p_itr, acc))
+
+                writer.add_scalar("Loss/valid", train_loss / p_itr, itr_)
+                writer.add_scalar("Accuracy/valid", 100 * acc, itr_)
+                train_loss = 0.0
+
+            itr_ += 1
 
     print('Finished Training')
-    torch.save(model.state_dict(), 'model/ResNet50_random_erase.pth')  # save trained model
+    torch.save(model.state_dict(), 'model/ResNet50_2.pth')  # save trained model
