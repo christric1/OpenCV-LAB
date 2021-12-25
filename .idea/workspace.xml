@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ed9625-ae50-48e3-af01-3bc3dc22a427" name="Changes" comment="Create UI.">
-      <change beforePath="$PROJECT_DIR$/.idea/OpenCV-Lab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OpenCV-Lab.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW2/Camera_Calibration.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW2/Camera_Calibration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW2/ResNet50.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW2/ResNet50.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_03-02-03_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640113323.DESKTOP-L6GDIRU.11320.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_03-08-50_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640113730.DESKTOP-L6GDIRU.15892.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_03-10-28_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640113828.DESKTOP-L6GDIRU.8532.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_11-11-32_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640142692.DESKTOP-L6GDIRU.10876.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_11-24-53_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640143493.DESKTOP-L6GDIRU.21412.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_11-48-49_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640144929.DESKTOP-L6GDIRU.21208.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_12-20-46_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640146846.DESKTOP-L6GDIRU.17236.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_16-17-27_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640161047.DESKTOP-L6GDIRU.19832.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec22_16-18-00_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640161080.DESKTOP-L6GDIRU.17416.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW2/runs/Dec23_03-08-00_DESKTOP-L6GDIRUResNet50/events.out.tfevents.1640200080.DESKTOP-L6GDIRU.11704.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW2/model/ResNet50_random_erase.pth" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +38,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Hw2_05_P76101615_郭育丞_V1" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main">

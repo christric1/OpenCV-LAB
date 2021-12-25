@@ -6,7 +6,7 @@ import numpy as np
 class Camera_Calibration:
 
     def __init__(self):
-        self.images = glob.glob('data\\Q2_Image\\*.bmp')
+        self.images = ["data\\Q2_Image\\{}.bmp".format(i) for i in range(1, 16)]
 
         img = cv2.imread(self.images[0])
         self.img_size = (img.shape[1], img.shape[0])

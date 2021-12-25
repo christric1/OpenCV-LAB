@@ -20,20 +20,19 @@ DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # data transformation
 data_transforms = {
     'train': transforms.Compose([
-        transforms.Resize((256, 256)),  # resize image to 224x224
-        transforms.RandomResizedCrop(224),  # random crop and scale
-        transforms.RandomHorizontalFlip(),  # 隨機水平翻轉
-        transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  # 標準化
+        transforms.Resize(256),
+        transforms.RandomCrop(224),
+        transforms.Resize(128),
+        transforms.ToTensor()
     ]),
 
-    'train_random_erase': transforms.Compose([
-        transforms.Resize((256, 256)),  # resize image to 224x224
-        transforms.RandomResizedCrop(224),  # random crop and scale
-        transforms.RandomHorizontalFlip(),  # 隨機水平翻轉
-        transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),  # 標準化
-        transforms.RandomErasing()
+    'train_argument': transforms.Compose([
+        transforms.Resize(256),
+        transforms.ColorJitter(),
+        transforms.RandomCrop(224),
+        transforms.RandomHorizontalFlip(),
+        transforms.Resize(128),
+        transforms.ToTensor()
     ]),
 
     'test': transforms.Compose([
@@ -44,7 +43,7 @@ data_transforms = {
 }
 
 # Pass transforms in here, then run the next cell to see how the transforms look
-dataset = datasets.ImageFolder('data/Q5_data/train', transform=data_transforms['train'])
+dataset = datasets.ImageFolder('data/Q5_data/train', transform=data_transforms['train_argument'])
 
 # Random split
 train_set_size = int(len(dataset) * 0.8)
@@ -101,7 +100,9 @@ class ResNet50:
         plt.show()
 
     def Data_Argument(self):
-        print("123")
+        img = cv2.imread("./chart/5.4_Accuracy.png")
+        img = cv2.resize(img, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_CUBIC)
+        cv2.imshow("img", img)
 
 
 if __name__ == '__main__':
@@ -117,7 +118,7 @@ if __name__ == '__main__':
     writer = SummaryWriter(comment="ResNet50")
 
     # 設置訓練細節
-    optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.CrossEntropyLoss()
 
     # 參數
@@ -151,41 +152,41 @@ if __name__ == '__main__':
                 acc = torch.mean(correct.float())
 
                 print('[Epoch {}/{}] Iteration {} -> Train Loss: {:.4f}, Accuracy: {:.3f}'.
-                      format(epoch + 1, epoch, itr, train_loss/p_itr, acc))
+                      format(epoch + 1, EPOCHS, itr, train_loss / p_itr, acc))
 
-                writer.add_scalar("Loss/train", train_loss/p_itr, itr)
+                writer.add_scalar("Loss/train", train_loss / p_itr, itr)
                 writer.add_scalar("Accuracy/train", 100 * acc, itr)
                 train_loss = 0.0
 
             itr += 1
 
         # valid
-        model.eval()
-        print("Valid : ")
-        for batch_idx, Data in enumerate(validLoader, 0):
-
-            inputs, labels = Data
-            inputs, labels = inputs.to(DEVICE), labels.to(DEVICE)
-
-            with torch.no_grad():
-                outputs = model(inputs)
-
-                loss = criterion(outputs, labels)
-                train_loss += loss.item()
-
-            if itr_ % p_itr == 0:
-                prediction = torch.argmax(outputs, dim=1)
-                correct = prediction.eq(labels)
-                acc = torch.mean(correct.float())
-
-                print('[Epoch {}/{}] Iteration {} -> Valid Loss: {:.4f}, Accuracy: {:.3f}'.
-                      format(epoch + 1, epoch, itr_, train_loss / p_itr, acc))
-
-                writer.add_scalar("Loss/valid", train_loss / p_itr, itr_)
-                writer.add_scalar("Accuracy/valid", 100 * acc, itr_)
-                train_loss = 0.0
-
-            itr_ += 1
+        # model.eval()
+        # print("Valid : ")
+        # for batch_idx, Data in enumerate(validLoader, 0):
+        #
+        #     inputs, labels = Data
+        #     inputs, labels = inputs.to(DEVICE), labels.to(DEVICE)
+        #
+        #     with torch.no_grad():
+        #         outputs = model(inputs)
+        #
+        #         loss = criterion(outputs, labels)
+        #         train_loss += loss.item()
+        #
+        #     if itr_ % p_itr == 0:
+        #         prediction = torch.argmax(outputs, dim=1)
+        #         correct = prediction.eq(labels)
+        #         acc = torch.mean(correct.float())
+        #
+        #         print('[Epoch {}/{}] Iteration {} -> Valid Loss: {:.4f}, Accuracy: {:.3f}'.
+        #               format(epoch + 1, EPOCHS, itr_, train_loss / p_itr, acc))
+        #
+        #         writer.add_scalar("Loss/valid", train_loss / p_itr, itr_)
+        #         writer.add_scalar("Accuracy/valid", 100 * acc, itr_)
+        #         train_loss = 0.0
+        #
+        #     itr_ += 1
 
     print('Finished Training')
-    torch.save(model.state_dict(), 'model/ResNet50_2.pth')  # save trained model
+    torch.save(model.state_dict(), 'model/ResNet50_argument.pth')  # save trained model
